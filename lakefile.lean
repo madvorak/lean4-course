@@ -2,7 +2,7 @@ import Lake
 open Lake DSL
 
 package «lean4-course» {
-  -- add any package configuration options here
+  moreServerArgs := #["-DautoImplicit=false"]
 }
 
 require mathlib from git
@@ -10,5 +10,6 @@ require mathlib from git
 
 @[default_target]
 lean_lib «Lean4Course» {
-  -- add any library configuration options here
+  moreLeanArgs := #["-DautoImplicit=false"]
+  globs := #[.submodules `course]
 }

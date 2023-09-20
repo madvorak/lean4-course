@@ -1,4 +1,4 @@
-import Std.Data.Nat.Basic
+import course.Day1
 
 
 def is4thpow (a : Nat) : Bool := false -- TODO
