@@ -2,10 +2,11 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LibrarySearch
 
+
 theorem add_self (n : ℕ) : n + n = 2 * n :=
 (Nat.two_mul n).symm
 
-theorem add_self_add_self (n : ℕ) :
+example (n : ℕ) :
   n + n + n = 3 * n :=
 by
   ring
@@ -44,7 +45,7 @@ le_trans hxy hyz
 example (x y z : ℚ) (hxy : x ≤ y) (hyz : y < z) : x < z :=
 LE.le.trans_lt hxy hyz
 
-example (a b c d : ℝ) (abcd : a + b + c ≤ 2 * d) (ab : a ≤ b) (ac : 2 * a ≤ c) :
+example (a b c d : ℝ) (habcd : a + b + c ≤ 2 * d) (hab : a ≤ b) (hac : 2 * a ≤ c) :
   2 * a ≤ d :=
 by
   linarith
@@ -74,7 +75,7 @@ by
   have suff : x*x - 10*x + 25 ≥ 0
   · convert_to (x - 5) ^ 2 ≥ 0
     · ring
-    nlinarith
+    exact sq_nonneg (x - 5)
   linarith
 
 example (x : ℝ) (xnz : x ≠ 0) :
@@ -95,11 +96,10 @@ by
   · exact Iff.mp sub_nonneg this
   have : (x^2 + 1) / x ≥ 2*x / x
   · exact Iff.mpr (div_le_div_right x_pos) this
-  have right_simpl : 2*x / x = 2 * (x/x)
-  · exact mul_div_assoc 2 x x
-  have left_simpl : (x ^ 2 + 1) / x = x + 1/x
-  · field_simp
-    exact sq x
-  rw [right_simpl, left_simpl] at this
+  have : x + 1 / x ≥ 2 * (x / x)
+  · convert this using 1
+    · field_simp
+      exact (sq x).symm
+    · exact mul_div 2 x x
   convert this
   field_simp
