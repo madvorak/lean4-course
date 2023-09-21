@@ -4,7 +4,7 @@ import course.Day2
 example (a b c d : ℕ) (ha : a = b + d) (hb : b = a * a) (hc : c = b + d) (hd : d = c * c) :
   b ^ d = d ^ b := sorry
 
-example (a b c d : ℤ) (ha : a = d ^ 4) (hc : b = 1 / c) (hc : c = a - b) (hd : d = 4 * a) :
+example (a b c d : ℤ) (ha : a = d ^ 4) (hb : b = 1 / c) (hc : c = a - b) (hd : d = 4 * a) :
   (a + b) ^ 2 - c ^ 2 = b * d := sorry
 
 example (x : ℚ) : x^2 - 6*x + 10 ≥ 0 := sorry
