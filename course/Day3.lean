@@ -54,7 +54,7 @@ by
   sorry
 
 
-theorem biz : 1 + 1 ≠ 3 := sorry
+private theorem biz : 1 + 1 ≠ 3 := sorry
 
 example : ¬ (1 + 1 = 3) := sorry
 
@@ -96,10 +96,5 @@ def Function.tendsTo (s : ℕ → ℝ) (L : ℝ) :
 
 theorem limit_sum {u v : ℕ → ℝ} {a b : ℝ} (hu : u.tendsTo a) (hv : v.tendsTo b) :
   (u + v).tendsTo (a + b) :=
-by
-  sorry
-
-theorem limit_product {u v : ℕ → ℝ} {a b : ℝ} (hu : u.tendsTo a) (hv : v.tendsTo b) :
-  (u * v).tendsTo (a * b) :=
 by
   sorry
