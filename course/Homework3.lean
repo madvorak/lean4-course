@@ -1,12 +1,13 @@
 import course.Day3
 
 
--- prove using only `exact` and `constructor` and `left` and `right` and `intro` and `cases'`
+-- prove using only `exact` and `constructor` and `left` and `right` and `intro` and `cases`/`cases'`
 example (P Q R : Prop) : P ∧ (Q ∨ R) ↔ P ∧ Q ∨ P ∧ R :=
 by
   sorry
 
 
+-- use any means necessary
 theorem limit_product {u v : ℕ → ℝ} {a b : ℝ} (hu : u.tendsTo a) (hv : v.tendsTo b) :
   (u * v).tendsTo (a * b) :=
 by
