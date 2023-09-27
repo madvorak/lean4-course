@@ -1,3 +1,4 @@
+import course.Day1
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LibrarySearch

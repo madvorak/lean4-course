@@ -94,7 +94,7 @@ def revers {α : Type} : List α → List α
 #eval revers list123b
 
 
-private def reversAppend {α : Type} (ys : List α) : List α → List α
+def reversAppend {α : Type} (ys : List α) : List α → List α
 | [ ]     => ys
 | x :: xs => reversAppend (x :: ys) xs
 
