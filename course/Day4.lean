@@ -32,7 +32,7 @@ by
     unfold oddNumbersDec
     unfold sumList
     rw [ih]
-    show _ = (n+1)^2
+    show _ = (n+1) ^ 2
     ring
 
 theorem sum_oddNumbers (n : ℕ) : sumList (oddNumbers n) = n ^ 2 :=
